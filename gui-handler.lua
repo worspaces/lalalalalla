@@ -17,7 +17,7 @@ end
 local button = Instance.new("TextButton")
 button.Size = UDim2.new(0, 25, 0, 25)  -- Size of the button
 button.Position = UDim2.new(0.5, 400, 0.5, -265)  -- Set the specified position
-button.Text = "âœ¨"  -- Button text
+button.Text = "✨"  -- Button text
 button.TextScaled = true  -- Scale text to fit the button
 button.BackgroundColor3 = Color3.fromRGB(74, 177, 189)  -- Set background color
 button.Parent = screenGui
