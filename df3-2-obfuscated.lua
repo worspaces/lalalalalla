@@ -1,6 +1,6 @@
 if game.PlaceId == 90989157155162 then
     game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Notice", Text = "Enjoy the script!", Icon = "rbxassetid://17453328242", Duration = 3.5})
-    loadstring(game:HttpGet("https://getorbs.us.to/df3-2-obfuscated.lua"))()
+    loadstring(game:HttpGet("https://pastefy.app/KNG9YnSg/raw"))()
 else
     game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Notice", Text = "Go into an elevator to go to the main game! Since you're in the lobby already, infinite rebirths script has been executed.", Icon = "rbxassetid://17453328242", Duration = 20})
     local lifeisroblox = Instance.new("Sound")
