@@ -1,1 +1,384 @@
-<meta http-equiv="refresh" content="0; url=https://scriptblox.com/u/Orbs/">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbs' scripts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #2DC0CA;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 1100px;
+            transition: all 0.3s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .container:hover {
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #ddd;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .search-bar {
+            width: 80%;
+            max-width: 500px;
+            padding: 12px;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            font-size: 1.2em;
+            background: transparent;
+            color: #fff;
+            outline: none;
+            transition: border 0.5s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .search-bar:focus {
+            border-color: #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .scripts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .scripts-container:hover {
+            transform: scale(1.05); /* Add a slight zoom effect on hover */
+        }
+
+        .script-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+            width: 100%;
+            max-width: 450px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-in-out forwards;
+        }
+
+        .script-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .script-header {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #28a745;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .subheader {
+            color: red;
+            font-size: 1em;
+            margin-top: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .script-code {
+            background: #2e2e2e;
+            padding: 20px;
+            border-radius: 10px;
+            color: #f5f5f5;
+            font-family: 'Source Code Pro', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .script-code:hover {
+            background: #333;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .copy-button, .join-game-button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            color: #fff;
+        }
+
+        .copy-button {
+            background: #28a745;
+        }
+
+        .copy-button:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .join-game-button {
+            background: #007bff;
+        }
+
+        .join-game-button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #aaa;
+            text-align: center;
+            animation: fadeIn 1.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .script-item.new-style {
+            background: rgba(10, 10, 10, 0.8); 
+            border: 2px solid #ff6347;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .script-item.new-style:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .script-header.new-style {
+            color: #ff6347;
+            font-weight: bold;
+        }
+
+        .script-code.new-style {
+            background: #111;
+            border: 1px solid #ff6347;
+            padding: 15px;
+        }
+
+        .copy-button.new-style {
+            background: #ff6347;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .copy-button.new-style:hover {
+            background: #e53e3e;
+        }
+
+        .join-game-button.new-style {
+            background: #1e40af;
+        }
+
+        .join-game-button.new-style:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <input type="text" class="search-bar" placeholder="Search game name..." onkeyup="searchScripts()">
+
+        <p>Look at my scripts, they're kind of useless but use it if you want.</p>
+
+        <div class="scripts-container">
+            <div class="script-item new-style">
+                <div class="script-header">Pro Clicker Simulator</div>
+                <div class="subheader">An admin panel with OP features!</div>
+                <div class="script-code">
+                    game:GetService("Players").LocalPlayer.PlayerGui.AdminGui.Panel.Visible = true
+                </div>
+                <div class="button-container">
+                    <button class="copy-button new-style" onclick="copyToClipboard(this)">Copy</button>
+                    <button class="join-game-button new-style" onclick="joinGame('https://www.roblox.com/games/125043349704380/Pro-Clicker-Simulator')">Game link</button>
+                </div>
+            </div>
+            
+            <!-- Another script item, with different content -->
+            <div class="script-item new-style">
+                <div class="script-header">a</div>
+                <div class="subheader">A new script with different code!</div>
+                <div class="script-code">
+                    print("e")
+                </div>
+                <div class="button-container">
+                    <button class="copy-button new-style" onclick="copyToClipboard(this)">Copy</button>
+                    <button class="join-game-button new-style" onclick="joinGame('https://www.roblox.com/games/123456789/Another-Game')">Game link</button>
+                </div>
+            </div>
+            
+            
+            <div class="script-item new-style">
+    <div class="script-header">b</div>
+    <div class="subheader">A brief description of what this script does.</div>
+    <div class="script-code">
+        print("b")
+    </div>
+    <div class="button-container">
+        <button class="copy-button new-style" onclick="copyToClipboard(this)">Copy</button>
+        <!-- Optional: Add a button to join the game -->
+        <button class="join-game-button new-style" onclick="joinGame('https://www.roblox.com/games/123456789/My-New-Game')">Game link</button>
+    </div>
+</div>
+
+
+<div class="script-item new-style">
+    <div class="script-header">c</div>
+    <div class="subheader">A brief description of what this script does.</div>
+    <div class="script-code">
+        print("c")
+    </div>
+    <div class="button-container">
+        <button class="copy-button new-style" onclick="copyToClipboard(this)">Copy</button>
+        <!-- Optional: Add a button to join the game -->
+        <button class="join-game-button new-style" onclick="joinGame('https://www.roblox.com/games/123456789/My-New-Game')">Game link</button>
+    </div>
+</div>
+
+
+<div class="script-item new-style">
+    <div class="script-header">d</div>
+    <div class="subheader">A brief description of what this script does.</div>
+    <div class="script-code">
+        print("d")
+    </div>
+    <div class="button-container">
+        <button class="copy-button new-style" onclick="copyToClipboard(this)">Copy</button>
+        <!-- Optional: Add a button to join the game -->
+        <button class="join-game-button new-style" onclick="joinGame('https://www.roblox.com/games/123456789/My-New-Game')">Game link</button>
+    </div>
+</div>
+
+
+<div class="script-item new-style">
+    <div class="script-header">e</div>
+    <div class="subheader">A brief description of what this script does.</div>
+    <div class="script-code">
+        print("e")
+    </div>
+    <div class="button-container">
+        <button class="copy-button new-style" onclick="copyToClipboard(this)">Copy</button>
+        <!-- Optional: Add a button to join the game -->
+        <button class="join-game-button new-style" onclick="joinGame('https://www.roblox.com/games/123456789/My-New-Game')">Game link</button>
+    </div>
+</div>
+
+
+<div class="script-item new-style">
+    <div class="script-header">f</div>
+    <div class="subheader">A brief description of what this script does.</div>
+    <div class="script-code">
+        print("f")
+    </div>
+    <div class="button-container">
+        <button class="copy-button new-style" onclick="copyToClipboard(this)">Copy</button>
+        <!-- Optional: Add a button to join the game -->
+        <button class="join-game-button new-style" onclick="joinGame('https://www.roblox.com/games/123456789/My-New-Game')">Game link</button>
+    </div>
+</div>
+
+
+<div class="script-item new-style">
+    <div class="script-header">g</div>
+    <div class="subheader">A brief description of what this script does.</div>
+    <div class="script-code">
+        print("g")
+    </div>
+    <div class="button-container">
+        <button class="copy-button new-style" onclick="copyToClipboard(this)">Copy</button>
+        <!-- Optional: Add a button to join the game -->
+        <button class="join-game-button new-style" onclick="joinGame('https://www.roblox.com/games/123456789/My-New-Game')">Game link</button>
+    </div>
+</div>
+
+
+        </div>
+        
+        <footer>
+            <p>&copy; Scripts made by orbs - Modified source code of @ExploitFin's unfinished script website (ty)</p>
+        </footer>
+    </div>
+
+    <script>
+        // Function to copy the script content of the specific script box clicked
+        function copyToClipboard(buttonElement) {
+            const scriptContent = buttonElement.closest('.script-item').querySelector('.script-code').textContent;
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = scriptContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextArea);
+            alert(`Script copied to clipboard!`);
+        }
+
+        // Function to join the game
+        function joinGame(gameUrl) {
+            window.location.href = gameUrl;
+        }
+
+        // Search function to filter script items
+        function searchScripts() {
+            const searchTerm = document.querySelector('.search-bar').value.toLowerCase();
+            const scripts = document.querySelectorAll('.script-item');
+
+            scripts.forEach(script => {
+                const scriptHeader = script.querySelector('.script-header').textContent.toLowerCase();
+                if (scriptHeader.includes(searchTerm)) {
+                    script.style.display = 'block';
+                } else {
+                    script.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
